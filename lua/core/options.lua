@@ -30,6 +30,8 @@ opt.splitbelow=true
 --外观
 opt.termguicolors=true
 opt.signcolumn="yes"
+--opt.cmdheight = 3
+--opt.laststatus = 3
 
 -- 设置默认编码为 UTF-8
 vim.o.encoding = "utf-8"
@@ -39,3 +41,4 @@ vim.o.fileencodings = "utf-8,gbk,gb2312,ascii,latin1,shift-jis,euc-jp,iso-2022-j
 
 -- 设置文件的默认编码
 vim.o.fileencoding = "utf-8"
+
