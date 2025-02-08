@@ -284,6 +284,10 @@ vim.cmd.colorscheme "vscode"
     keys = { "<C-a>", { "<C-x>", mode = "n" } },
   },
 
+  {
+    "tpope/vim-commentary",
+    --keys={}
+  },
   -- local plugins need to be explicitly configured with dir
   --{ dir = "~/projects/age-secret.nvim" },
 
