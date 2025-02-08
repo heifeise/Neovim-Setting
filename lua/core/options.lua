@@ -1,26 +1,27 @@
 local opt = vim.opt
+local api = vim.api
 --行号
-opt.number=true
-opt.relativenumber=true
+opt.number = true
+opt.relativenumber = true
 
 --缩进
-opt.tabstop=4
-opt.shiftwidth=4
-opt.expandtab=true
-opt.autoindent=true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.autoindent = true
 
 --防止包裹
 --opt.wrap=false
 
 --光标行
-opt.cursorline=true
+opt.cursorline = true
 
 --系统剪贴板
 opt.clipboard:append("unnamedplus")
 
 --默认新创建的窗口在右和下
-opt.splitright=true
-opt.splitbelow=true
+opt.splitright = true
+opt.splitbelow = true
 
 --搜索时不区分大小写
 --opt.ignorecase=true
@@ -28,8 +29,8 @@ opt.splitbelow=true
 --opt.smartcase=true
 
 --外观
-opt.termguicolors=true
-opt.signcolumn="yes"
+opt.termguicolors = true
+opt.signcolumn = "yes"
 --opt.cmdheight = 3
 --opt.laststatus = 3
 
@@ -42,3 +43,12 @@ vim.o.fileencodings = "utf-8,gbk,gb2312,ascii,latin1,shift-jis,euc-jp,iso-2022-j
 -- 设置文件的默认编码
 vim.o.fileencoding = "utf-8"
 
+-- 代码格式化
+api.nvim_create_autocmd("BufWritePost", {
+	pattern = "*",
+	command = "FormatWrite",
+})
+--折叠代码
+opt.foldmethod = 'expr'
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+opt.foldlevel=2 --第二层才折叠
