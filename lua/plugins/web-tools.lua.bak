@@ -1,0 +1,25 @@
+return {
+	"ray-x/web-tools.nvim",
+	config = function()
+		require("web-tools").setup({
+			-- 配置选项
+			keymaps = {
+				preview = "<leader>wp", -- 浏览器预览快捷键
+				restart = "<leader>wr", -- 重启预览服务器快捷键
+			},
+			browser_preview = {
+				port = 8080, -- 预览服务器端口
+				open_cmd = "firefox", -- 打开浏览器的命令
+			},
+			rest_client = {
+				env_file = ".env", -- 环境变量文件
+			},
+			json_formatter = {
+				indent = 2, -- JSON 缩进空格数
+			},
+			css_colorizer = {
+				enable = true, -- 启用 CSS 颜色高亮
+			},
+		})
+	end,
+}
