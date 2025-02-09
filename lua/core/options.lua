@@ -49,6 +49,6 @@ api.nvim_create_autocmd("BufWritePost", {
 	command = "FormatWrite",
 })
 --折叠代码
-opt.foldmethod = 'expr'
-opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-opt.foldlevel=2 --第二层才折叠
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 2 --第二层才折叠
