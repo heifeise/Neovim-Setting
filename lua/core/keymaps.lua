@@ -16,4 +16,3 @@ keymap.set("n", "<leader>sv", "<C-w>v") --水平增加窗口
 keymap.set("n", "<leader>sh", "<C-w>s") --垂直增加窗口
 
 --keymap.set("n","<leader>nh","nohl<CR>")--取消搜索高亮
-

@@ -44,9 +44,17 @@ vim.o.fileencodings = "utf-8,gbk,gb2312,ascii,latin1,shift-jis,euc-jp,iso-2022-j
 vim.o.fileencoding = "utf-8"
 
 -- 代码格式化
+-- specifiecd jdtls installed mason as java formatter(the configuration is in lsp)
+-- as for other language, the configuration is inside formatter.nvim
 api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*",
 	command = "FormatWrite",
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.java",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
 })
 --折叠代码
 opt.foldmethod = "expr"

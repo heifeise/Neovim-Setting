@@ -9,6 +9,8 @@ return {
 		require("mason-lspconfig").setup()
 		-- Here you can configure LSP settings
 		local lspconfig = require("lspconfig")
+		-- vim.lsp.set_log_level("OFF")--change the global logging level
+		vim.lsp.set_log_level(vim.log.levels.ERROR)
 
 		vim.diagnostic.config({
 			virtual_text = true, -- 在代码行内显示错误信息
@@ -51,7 +53,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-		-- 配置 jdtls
+		-- 配置 jdtls,installed by mason
 		local jdk_path = os.getenv("JAVA_HOME")
 		local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 		local workspace_dir = vim.fn.expand("~/.local/share/nvim/lsp_servers/jdtls/workspace/") .. project_name
@@ -63,7 +65,8 @@ return {
 				"-Dosgi.bundles.defaultStartLevel=4",
 				"-Declipse.product=org.eclipse.jdt.ls.core.product",
 				"-Dlog.protocol=true",
-				"-Dlog.level=ALL",
+				-- "-Dlog.level=ALL",--OFF,SERVER,ALL
+				"-Dlog.level=SERVER",
 				"-Xms1g",
 				"-Xmx2g",
 				"--add-modules=ALL-SYSTEM",
@@ -77,7 +80,7 @@ return {
 				vim.fn.expand(jdtls_path .. "/config"), -- 根据操作系统选择 config_linux、config_mac 或 config_win
 				"-data",
 				--vim.fn.expand("~/.local/share/nvim/lsp_servers/jdtls/workspace"), -- 工作区目录
-				workspace_dir,
+				workspace_dir, --工作区目录
 			},
 			root_dir = lspconfig.util.root_pattern(".git", "pom.xml", "build.gradle"), -- 项目根目录标识
 			settings = {

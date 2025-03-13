@@ -7,7 +7,7 @@ return {
 		-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 		require("formatter").setup({
 			-- Enable or disable logging
-			logging = true,
+			logging = false,
 			-- Set the log level
 			log_level = vim.log.levels.WARN,
 			-- All formatter configurations are opt-in
