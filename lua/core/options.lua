@@ -24,7 +24,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 --搜索时不区分大小写
---opt.ignorecase=true
+opt.ignorecase=true
 --搜索全大写或者全小写时，区分大小写
 --opt.smartcase=true
 
@@ -37,8 +37,8 @@ opt.signcolumn = "yes"
 -- 设置默认编码为 UTF-8
 vim.o.encoding = "utf-8"
 
--- 设置文件编码检测顺序
-vim.o.fileencodings = "utf-8,gbk,gb2312,ascii,latin1,shift-jis,euc-jp,iso-2022-jp,windows-1252,utf-16"
+-- 文件编码检测顺序（带BOM优先，修正Shift JIS拼写）
+vim.o.fileencodings = "ucs-bom,utf-8,gbk,gb2312,ascii,latin1,shift_jis,euc-jp,iso-2022-jp,windows-1252,utf-16"
 
 -- 设置文件的默认编码
 vim.o.fileencoding = "utf-8"
