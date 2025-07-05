@@ -83,6 +83,7 @@ return {
 				workspace_dir, --工作区目录
 			},
 			root_dir = lspconfig.util.root_pattern(".git", "pom.xml", "build.gradle"), -- 项目根目录标识
+			filetypes = { "java", "xml" ,"json"}, -- You can add more filetypes if needed
 			settings = {
 				java = {
 					signatureHelp = { enabled = true },
@@ -130,7 +131,7 @@ return {
 		lspconfig.pyright.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "py", "xml" }, -- You can add more filetypes if needed
+			filetypes = { "py"}, -- You can add more filetypes if needed
 		})
 		lspconfig.ts_ls.setup({
 			on_attach = on_attach,

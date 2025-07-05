@@ -37,7 +37,7 @@ return {
 					function()
 						return {
 							exe = "shfmt",
-							args = { "-w" ,vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+							args = { "-w", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
 							stdin = true,
 						}
 					end,
@@ -52,6 +52,15 @@ return {
 					end,
 				},
 				javascript = {
+					function()
+						return {
+							exe = "prettier",
+							args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+							stdin = true,
+						}
+					end,
+				},
+				json = {
 					function()
 						return {
 							exe = "prettier",

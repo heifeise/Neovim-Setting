@@ -24,7 +24,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 --搜索时不区分大小写
---opt.ignorecase=true
+opt.ignorecase=true
 --搜索全大写或者全小写时，区分大小写
 --opt.smartcase=true
 
