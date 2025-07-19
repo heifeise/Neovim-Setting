@@ -5,7 +5,7 @@ return {
 	config = function()
 		-- Lua:
 		-- For light theme (neovim's default)
-		vim.o.background = "light"
+		-- vim.o.background = "light"
 		-- For dark theme
 		vim.o.background = "dark"
 

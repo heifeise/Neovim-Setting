@@ -59,4 +59,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 --折叠代码
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.foldlevel = 2 --第二层才折叠
+opt.foldlevel = 3 --第三层才折叠
